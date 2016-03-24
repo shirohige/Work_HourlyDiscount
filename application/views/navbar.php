@@ -14,8 +14,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href='<?php echo base_url(); ?>index.php/welcome'><span>Home</span></a></li>
         <li><a href='about.html'><span>About</span></a></li>
         <li><a href='sign-up.html'><span>Post Coupons</span></a></li>
-        <li><a href='sign-up.html'><span>Sign-In</span></a></li>
-
+        <?php
+        $loggedin=0;
+        if(/*$this->session->*/$loggedin != 1){
+          ?>
+          <li id="sign-up"><a href='sign-up.html'><span>Sign-In</span></a></li>
+          <?php
+        }
+        else {
+          ?>
+          <li class="col-2 profile"><a href="">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+          <?php
+        }
+        ?>
       </ul>
     </div>
   </div>
@@ -24,14 +35,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <li class="col-2"><a href="about.html">About</a></li>
     <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
     <li class=" col-2"><a href="postcoupon.html">Post Coupons</a></li>
-    <li class="col-2"><a href="" id="profile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+    <?php
+    if(/*$this->session->*/$loggedin != 1){
+      ?>
+        <li class=" col-2"><a href="postcoupon.html">Sign-In</a></li>
+      <?php
+    }
+    else {
+      ?>
+      <li class="col-2 profile"><a href="">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <?php
+    }
+    ?>
   </ul>
   <ul class="primary-navbar secondary-navbar" >
     <li class=" col-2"><a href="index.html">Home</a></li>
     <li class="col-2"><a href="about.html">About</a></li>
     <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
     <li class=" col-2"><a href="sign-up.html">Post Coupons</a></li>
-    <li class="col-2" ><a href="sign-up.html" >Sign-In </a></li>
+    <?php
+    if(/*$this->session->*/$loggedin != 1){
+      ?>
+        <li class=" col-2"><a href="postcoupon.html">Sign-In</a></li>
+      <?php
+    }
+    else {
+      ?>
+      <li class="col-2 profile"><a href="">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <?php
+    }
+    ?>
   </ul>
   <div class="blur" id="blur"></div>
   <div class="side-menu" id="side-menu">

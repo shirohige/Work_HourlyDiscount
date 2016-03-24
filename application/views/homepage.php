@@ -338,6 +338,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $(document).ready(function(){
 	var curr=0,slide=1,flag=0;
+	var flag2=0,flag3=3;
 	$('#circle-1').css('opacity', '1');
 	$('#right').click(function() {
 		$('#circle-'+slide).css('opacity', '0.3');
@@ -345,6 +346,7 @@ $(document).ready(function(){
 		{
 			curr=curr-100;
 			slide=slide+1;
+			flag2=flag2+1;
 		}
 		$('.slide-container').css({left: curr+'%'});
 		$('	.banner-bg-container').css({left: curr+'%'});
@@ -359,6 +361,7 @@ $(document).ready(function(){
 		{
 			curr=curr+100;
 			slide=slide-1;
+			flag2=flag2-1;
 		}
 		$('.slide-container').css({left: curr+'%'});
 		$('	.banner-bg-container').css({left: curr+'%'});
@@ -381,45 +384,77 @@ $(document).ready(function(){
 	});
 
 	( function() {
-
 		$('#btn-search').on('click', function(e) {
-
 			e.preventDefault();
 			$('#search').animate({width: 'toggle'}).focus();
-
 		});
-
 	} () );
 	$( ".hamburger-button" ).click(function() {
 		$(this).toggleClass('open');
 		if(flag==0)
 		{
 			$('#mobile-navbar-submenu').css('height', '150px');
-
-
 			flag=1;
 		}
 		else if(flag==1)
 		{
 			$('#mobile-navbar-submenu').css('height', '0px');
-
-
 			flag=0;
 		}
-
 	});
-	$( "#profile" ).mouseover(function() {
+	$( ".profile" ).mouseover(function() {
 			$('.side-menu ul').css('right', '0px');
 			$('#blur').css('visibility', 'visible');
-
 	});
 	$( "#close-btn" ).click(function() {
+
 			$('.side-menu ul').css('right', '-450px');
 			$('#blur').css('visibility', 'hidden');
+		});
+	/*	var j=0;
+		var flag3=0;
+		while(0){
+			while(flag3<3){
+				flag3++;
+			}
+			while(flag3>0){
+				flag3--;
+			}
+		}*/
+	//$('#right').click();
+	var obj = $('#right');
+	setInterval(function(){slideshow()}, 6000);
+	function slideshow() {
+		//alert(flag2);
+		if(flag2>=3) obj = $('#left');
+		if(flag2<=0) obj = $('#right');
+		obj.click();
+		}
 
+
+/*
+var timeid=setInterval(function() {
+  $('#right').click();
+	if(flag2==3)clearInterval(timeid);
+	alert('flag2 = ' + flag2);
+},  1000);
+	alert('flag3 = ' + flag2);
+var timeid2=setInterval(function() {
+  $('#left').click();
+	if(flag2==0)clearInterval(timeid2);
+
+		alert('flag4' + flag2);
+},  1000);*/
 	});
-
-});
+//$(window).load(slideshow);
+/*function slideshow(){
+	$('#right').click();
+	setTimeout(50000);
+	$('#right').click();
+	setTimeout(50000);
+	$('#right').click();
+	setTimeout(50000);
+}*/
 
 </script>
 </body>

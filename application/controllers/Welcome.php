@@ -18,9 +18,26 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+	public function index(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$this->load->view('homepage',$data);
+	}
+	public function about(){
+		$this->load->view('about');
+	}
+	public function editcoup(){
+		$this->load->view('edit-coupon');
+	}
+	public function editacc(){
+		$this->load->view('edit-account');
+	}
+	public function reqp(){
+		$this->load->view('request-pending');
+	}
+	public function addcoup(){
+		$this->load->view('add-coupon');
+	}
+	public function coup(){
+		$this->load->view('coupons');
 	}
 }
