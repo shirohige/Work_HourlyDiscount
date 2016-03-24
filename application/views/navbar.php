@@ -12,13 +12,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="sub-menu" id="mobile-navbar-submenu">
       <ul>
         <li><a href='<?php echo base_url(); ?>index.php/welcome'><span>Home</span></a></li>
-        <li><a href='about.html'><span>About</span></a></li>
+        <li><a href='<?php echo base_url(); ?>about.html'><span>About</span></a></li>
         <?php
         $loggedin=0;
         if(/*$this->session->*/$loggedin != 1){
           ?>
-          <li><a href='sign-up.html'><span>Post Coupons</span></a></li>
-          <li id="sign-up"><a href='sign-up.html'><span>Sign-In</span></a></li>
+          <li><a href='<?php echo base_url(); ?>sign-up.html'><span>Post Coupons</span></a></li>
+          <li id="sign-up"><a href='<?php echo base_url(); ?>sign-up.html'><span>Sign-In</span></a></li>
           <?php
         }
         else {
