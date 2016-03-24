@@ -1,5 +1,6 @@
 <?php
 //Random Text
+//Random Text 2
 /**
  * CodeIgniter
  *
