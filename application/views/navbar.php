@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if(/*$this->session->*/$loggedin != 1){
       ?>
       <li><a href='sign-up.html'><span>Post Coupons</span></a></li>
-      <li class=" col-2"><a href="postcoupon.html">Sign-In</a></li>
+      <li class=" col-2"><a href="signup.html">Sign-In</a></li>
       <?php
     }
     else {
