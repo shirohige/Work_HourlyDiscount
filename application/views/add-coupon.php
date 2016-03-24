@@ -5,12 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <title>Hourly Discounts</title>
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
 
-  <link href="css/postcoupon.css" rel='stylesheet' type='text/css' />
-  <link href="css/add-coupon.css" rel='stylesheet' type='text/css' />
-  <link href="css/common.css" rel='stylesheet' type='text/css' />
-  <link  rel="icon" href="images/hd-logo.png" type="image/png" />
+  <link href="<?php echo base_url(); ?>css/postcoupon.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/add-coupon.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
+  <link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -31,20 +31,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="sub-menu" id="mobile-navbar-submenu">
           <ul>
-            <li><a href='index.html'><span>Home</span></a></li>
-            <li><a href='about.html'><span>About</span></a></li>
-            <li><a href='postcoupon.html'><span>Post Coupons</span></a></li>
-            <li><a href='index.html#search'><span>Search</span></a></li>
+            <li><a href='<?php echo base_url(); ?>'><span>Home</span></a></li>
+            <li><a href='<?php echo base_url(); ?>index.php/welcome/about'><span>About</span></a></li>
+            <li><a href='<?php echo base_url(); ?>index.php/welcome/postcoup'><span>Post Coupons</span></a></li>
+            <li><a href='<?php echo base_url(); ?>'><span>Search</span></a></li>
           </ul>
         </div>
       </div>
 
       <ul class="primary-navbar secondary-navbar" >
-        <li class=" col-2"><a href="index.html">Home</a></li>
-        <li class="col-2"><a href="about.html">About Us</a></li>
+        <li class=" col-2"><a href="<?php echo base_url(); ?>">Home</a></li>
+        <li class="col-2"><a href="<?php echo base_url(); ?>index.php/welcome/about">About Us</a></li>
         <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
-          <li class=" col-2"><a href="postcoupon.html">Post Coupons</a></li>
-          <li class="col-2"><a href="index.html#search">Search</a></li>
+          <li class=" col-2"><a href="<?php echo base_url(); ?>index.php/welcome/postcoup">Post Coupons</a></li>
+          <li class="col-2"><a href="<?php echo base_url(); ?>">Search</a></li>
         </ul>
       </nav>
 
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="quote-banner"><h2>ADD COUPON</h2></div>
             <form action="/" method="post">
               <div class="field-wrap">
-                <center><img alt="coupon-logo" class="coupon-logo" src="images/coupon-logo.png"></center>
+                <center><img alt="coupon-logo" class="coupon-logo" src="<?php echo base_url(); ?>/images/coupon-logo.png"></center>
                 <center><div class="btn-style-2" >Upload Logo</div></center>
               </div>
               <div class="field-wrap">

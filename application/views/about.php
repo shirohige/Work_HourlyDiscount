@@ -28,20 +28,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="sub-menu" id="mobile-navbar-submenu">
           <ul>
-            <li><a href='<?php echo base_url(); ?>index.html'><span>Home</span></a></li>
-            <li><a href='about.html'><span>About</span></a></li>
-            <li><a href='postcoupon.html'><span>Post Coupons</span></a></li>
-            <li><a href='index.html#search'><span>Search</span></a></li>
+            <li><a href='<?php echo base_url(); ?>'><span>Home</span></a></li>
+            <li><a href='<?php echo base_url(); ?>index.php/welcome/about'><span>About</span></a></li>
+            <li><a href='<?php echo base_url(); ?>index.php/welcome/postcoup'><span>Post Coupons</span></a></li>
+            <li><a href='<?php echo base_url(); ?>index.php/welcome/'><span>Search</span></a></li>
           </ul>
         </div>
       </div>
 
       <ul class="primary-navbar secondary-navbar" >
-        <li class=" col-2"><a href="index.html">Home</a></li>
-        <li class="col-2"><a href="about.html">About</a></li>
+        <li class=" col-2"><a href="<?php echo base_url(); ?>">Home</a></li>
+        <li class="col-2"><a href="<?php echo base_url(); ?>index.php/welcome/about">About</a></li>
         <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
-          <li class=" col-2"><a href="postcoupon.html">Post Coupons</a></li>
-					<li class="col-2"><a href="index.html#search">Search</a></li>
+          <li class=" col-2"><a href="<?php echo base_url(); ?>index.php/welcome/postcoup">Post Coupons</a></li>
+					<li class="col-2"><a href="<?php echo base_url(); ?>">Search</a></li>
         </ul>
       </nav>
 

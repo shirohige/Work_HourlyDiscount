@@ -40,4 +40,7 @@ class Welcome extends CI_Controller {
 	public function coup(){
 		$this->load->view('coupons');
 	}
+	public function signup(){
+		$this->load->view('sign-up');
+	}
 }
