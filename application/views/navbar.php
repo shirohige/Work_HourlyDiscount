@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         else {
           ?>
           <li><a href='coupons.html'><span>Post Coupons</span></a></li>
-          <li class="col-2 profile"><a href="editprofile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+          <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
           <?php
         }
         ?>
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     else {
       ?>
       <li><a href='coupons.html'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="editprofile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>
@@ -58,13 +58,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if(/*$this->session->*/$loggedin != 1){
       ?>
       <li><a href='sign-up.html'><span>Post Coupons</span></a></li>
-      <li class=" col-2"><a href="postcoupon.html">Sign-In</a></li>
+      <li class=" col-2"><a href="signup.html">Sign-In</a></li>
       <?php
     }
     else {
       ?>
       <li><a href='coupons.html'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="editprofile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>
