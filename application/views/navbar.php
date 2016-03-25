@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         else {
           ?>
           <li><a href='coupons.html'><span>Post Coupons</span></a></li>
-          <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+          <li class="col-2 profile"><a >Profile <span><i class="fa fa-caret-right"></i></span></a></li>
           <?php
         }
         ?>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     else {
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a >Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     else {
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a>Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>

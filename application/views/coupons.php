@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <section class="quote-banner">
         <h2>CONTROL PANEL</h2>
       </section>
-      <section class="coupons cp-menu">
+      <section class="cp-menu">
       <ul>
         <li>
           <a href="<?php echo base_url(); ?>/index.php/welcome/addcoupon">
