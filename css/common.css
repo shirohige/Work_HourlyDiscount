@@ -59,6 +59,12 @@ a{
     .coupons ul li{
       width:48%;
     }
+    .secondary-navbar,.primary-navbar{
+      visibility: hidden!important;
+    }
+    .mobile-nav-bar{
+      visibility: visible;;
+    }
     .footer-distributed{
       bottom:-750px;
     }
@@ -69,12 +75,6 @@ a{
 
     body{
       overflow-x: hidden;
-    }
-    .mobile-nav-bar{
-      visibility: visible;;
-    }
-    .secondary-navbar,.primary-navbar{
-      visibility: hidden;
     }
     .footer-distributed{
       bottom:-750px;
@@ -102,11 +102,7 @@ a{
     	.footer-distributed .footer-center i{
     		margin-left: 0;
     	}
-    .coupons ul li{
-      width:100%;
 
-
-    }
     .top-container{
       height: 320px;
     }
@@ -140,14 +136,17 @@ a{
     {
         margin-top: 75px;
     }
+    .top-container{
+      height: 160px;
+    }
+}
+@media only screen and (max-width: 480px){
+  .coupons ul li{
+    width: 100%;
+  }
 }
 
 ::selection {
     background: #2b2c41;
     color: #fff;
-}
-@media only screen and (max-width: 768px) {
-  .top-container{
-    height: 160px;
-  }
 }
