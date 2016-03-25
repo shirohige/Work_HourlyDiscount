@@ -59,7 +59,7 @@ $(document).ready(function(){
     $(target).fadeIn(600);
 
   });
-  $( ".profile" ).mouseover(function() {
+  $( ".profile" ).click(function() {
       $('.side-menu ul').css('right', '0px');
       $('#blur').css('visibility', 'visible');
   });

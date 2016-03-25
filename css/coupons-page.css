@@ -8,6 +8,36 @@
   position: absolute;
   top:90px;
 }
+.cp-menu{
+  position: relative;
+  width:100%;
+  text-align: center;
+  height: auto;
+
+}
+.cp-menu ul{
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  text-transform: uppercase;
+  float: left;
+    background-color: red;
+}
+.cp-menu ul li{
+  display: inline-block;
+width:50%;
+height:570px;
+    background-color:yellow;
+    float: left;
+  display: inline;
+
+  border-top: 1px solid  #e5e5e5;
+  border-left: 1px solid  #e5e5e5;
+
+}
+.cp-menu li:hover{
+background-color:#F0F0F0   ;
+}
 .cp-menu ul li{
 width:50%;
 height:250px;
@@ -23,6 +53,11 @@ background-color: #2c2c2c;
 }
 .cp-menu ul li h2{
   font-size:23px;
+    font-size: 30px;
+    padding-top: 20px;
+    color: #2b2b2b;
+    letter-spacing: 5px;
+
 }
 .cp-menu ul li:hover h2,.cp-menu ul li:hover .fa{
   color:#fff;
