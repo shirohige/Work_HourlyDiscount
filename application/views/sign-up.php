@@ -146,105 +146,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/common.js"></script>
-    <script>
 
-    $(document).ready(function(){
-      $('.secondary-navbar').css('opacity', '1');
-
-
-
-
-      $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
-        var $this = $(this),
-        label = $this.prev('label');
-
-        if (e.type === 'keyup') {
-          if ($this.val() === '') {
-            label.removeClass('active highlight');
-          } else {
-            label.addClass('active highlight');
-          }
-        } else if (e.type === 'blur') {
-          if( $this.val() === '' ) {
-            label.removeClass('active highlight');
-          } else {
-            label.removeClass('highlight');
-          }
-        } else if (e.type === 'focus') {
-
-          if( $this.val() === '' ) {
-            label.removeClass('highlight');
-          }
-          else if( $this.val() !== '' ) {
-            label.addClass('highlight');
-          }
-        }
-
-      });
-
-      $('.tab a').on('click', function (e) {
-
-        e.preventDefault();
-
-        $(this).parent().addClass('active');
-        $(this).parent().siblings().removeClass('active');
-
-        target = $(this).attr('href');
-
-        $('.tab-content > div').not(target).hide();
-
-        $(target).fadeIn(600);
-
-      });
-      var flag=0;
-      $( ".hamburger-button" ).click(function() {
-        	$(this).toggleClass('open');
-        if(flag==0)
-        {
-          $('#mobile-navbar-submenu').css('height', '150px');
-
-
-          flag=1;
-        }
-        else if(flag==1)
-        {
-          $('#mobile-navbar-submenu').css('height', '0px');
-
-
-          flag=0;
-        }
-
-      });
-
-    });
-
-    </script>
     <script src="http://maps.googleapis.com/maps/api/js">
 </script>
 
-<script>
-var myCenter=new google.maps.LatLng(51.508742,-0.120850);
 
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:5,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 
   </body>
   </html>

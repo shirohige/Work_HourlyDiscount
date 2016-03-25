@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-//link all pages
+
 <nav>
   <div class="mobile-nav-bar hidden">
     <div class="mobile-header-container"><span class="brand-header">Hourly Discounts</span></div>

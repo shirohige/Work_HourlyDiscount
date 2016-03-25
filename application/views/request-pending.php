@@ -91,33 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>js/common.js"></script>
-  <script>
 
-  $(document).ready(function(){
-    $('.secondary-navbar').css('opacity', '1');
-    var flag=0;
-    $( ".hamburger-button" ).click(function() {
-      	$(this).toggleClass('open');
-      if(flag==0)
-      {
-        $('#mobile-navbar-submenu').css('height', '150px');
-
-
-        flag=1;
-      }
-      else if(flag==1)
-      {
-        $('#mobile-navbar-submenu').css('height', '0px');
-
-
-        flag=0;
-      }
-
-    });
-
-  });
-
-  </script>
 
 </body>
 </html>
