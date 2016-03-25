@@ -28,14 +28,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <section class="coupons cp-menu">
       <ul>
         <li>
-          <a href="add-coupon.html">
+          <a href="<?php echo base_url(); ?>/index.php/welcome/addcoupon">
           <h2>Add Coupons</h2>
           <span class="fa-6"><i class="fa fa-plus-square-o "></i></span>
 
         </a>
         </li>
         <li>
-          <a href="edit-account.html">
+          <a href="<?php echo base_url(); ?>/index.php/welcome/editaccount">
           <h2>Edit Account</h2>
           <span class="fa-6"><i class="fa fa-pencil-square-o"></i></span>
 

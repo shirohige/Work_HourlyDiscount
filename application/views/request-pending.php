@@ -5,11 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <title>Hourly Discounts</title>
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
-  <link href="css/postcoupon.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/postcoupon.css" rel='stylesheet' type='text/css' />
 
-  <link href="css/common.css" rel='stylesheet' type='text/css' />
-  <link  rel="icon" href="images/hd-logo.png" type="image/png" />
+  <link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
+  <link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">

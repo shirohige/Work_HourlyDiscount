@@ -5,11 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <title>Hourly Discounts</title>
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
-  <link href="css/postcoupon.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/postcoupon.css" rel='stylesheet' type='text/css' />
 
-  <link href="css/common.css" rel='stylesheet' type='text/css' />
-  <link  rel="icon" href="images/hd-logo.png" type="image/png" />
+  <link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
+  <link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -33,9 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <div id="signup">
                 <div class="quote-banner"><h2>EDIT ACCOUNT</h2></div>
-                <form action="request-pending.html" method="post">
+                <form action="<?php echo base_url(); ?>/index.php/welcome/requestpending" method="post">
                   <div class="field-wrap">
-                    <center><img alt="coupon-logo" class="coupon-logo" src="images/coupon-logo.png"></center>
+                    <center><img alt="coupon-logo" class="coupon-logo" src="<?php echo base_url(); ?>images/coupon-logo.png"></center>
                     <center><div class="btn-style-2" >Change Pic</div></center>
                   </div>
                   <div class="top-row">

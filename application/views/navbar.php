@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         else {
           ?>
           <li><a href='coupons.html'><span>Post Coupons</span></a></li>
-          <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+          <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
           <?php
         }
         ?>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     else {
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     else {
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
-      <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
+      <li class="col-2 profile"><a href="<?php echo base_url(); ?>index.php/welcome/editprofile">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
     ?>
@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="side-menu" id="side-menu">
     <ul>
       <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
-      <li><a href='redeemed-coupons.html'><span>Redeemed Coupons</span></a></li>
+      <li><a href='<?php echo base_url(); ?>index.php/welcome/redeemedcoupons'><span>Redeemed Coupons</span></a></li>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
       <li><a href='#'><span>Log Out</span></a></li>
       <div class="close-btn" id="close-btn">
