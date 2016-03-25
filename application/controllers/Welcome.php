@@ -50,4 +50,8 @@ class Welcome extends CI_Controller {
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$this->load->view('sign-up',$data);
 	}
+	public function redeemedcoupons(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('redeemedcoupons',$data);
+	}
 }
