@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href='<?php echo base_url(); ?>'><span>Home</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/about'><span>About</span></a></li>
         <?php
-        $loggedin=1;
+        $loggedin=0;
         if(/*$this->session->*/$loggedin != 1){
           ?>
           <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>

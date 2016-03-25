@@ -54,4 +54,14 @@ class Welcome extends CI_Controller {
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$this->load->view('redeemedcoupons',$data);
 	}
+	public function register(){
+
+		$this->load->model('register');
+		$this->register->signup();
+	}
+	public function login(){
+
+		$this->load->model('register');
+		$this->register->login();
+	}
 }

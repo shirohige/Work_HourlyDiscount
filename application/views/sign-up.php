@@ -35,13 +35,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="tab-content">
             <div id="signup">
               <div class="quote-banner"><h2>JOIN US</h2></div>
-              <form action="request-pending.html" method="post">
+              <form action="<?php echo base_url(); ?>index.php/welcome/register" method="post">
 
                 <div class="field-wrap">
-                  <input type="email" required autocomplete="off" placeholder="Email Address"/>
+                  <input type="email" required autocomplete="off" placeholder="Email Address" name='email' id='email'/>
                 </div>
                 <div class="field-wrap">
-                  <input type="password" required autocomplete="off" placeholder="Set a password"/>
+                  <input type="password" required autocomplete="off" placeholder="Set a password"name='pass' id='pass'/>
                 </div>
                 <div class="field-wrap">
                   <input type="password" required autocomplete="off" placeholder="Confirm password"/>
@@ -55,14 +55,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="login">
 
 
-              <form action="coupons.html" method="post">
+              <form action="<?php echo base_url(); ?>index.php/welcome/login" method="post">
 
                 <div class="field-wrap">
-                  <input type="email" required autocomplete="off" placeholder="Email address"/>
+                  <input type="email" required autocomplete="off" placeholder="Email address" name='email' id='name'/>
                 </div>
 
                 <div class="field-wrap">
-                  <input type="password" required autocomplete="off" placeholder="Password"/>
+                  <input type="password" required autocomplete="off" placeholder="Password" name='pass' id='pass'/>
                 </div>
 
 
