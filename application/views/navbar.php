@@ -15,10 +15,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href='<?php echo base_url(); ?>'><span>Home</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/about'><span>About</span></a></li>
         <?php
-        $loggedin=0;
+        $loggedin=1;
         if(/*$this->session->*/$loggedin != 1){
           ?>
-          <li><a href='<?php echo base_url(); ?>sign-up.html'><span>Post Coupons</span></a></li>
+          <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>
           <li id="sign-up"><a href='<?php echo base_url(); ?>signup'><span>Sign-In</span></a></li>
           <?php
         }
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
     else {
       ?>
-      <li><a href='<?php echo base_url(); ?>index.php/welcome/coup'><span>Post Coupons</span></a></li>
+      <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
       <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
@@ -58,13 +58,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php
     if(/*$this->session->*/$loggedin != 1){
       ?>
-      <li><a href='sign-up.html'><span>Post Coupons</span></a></li>
+      <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>
       <li class=" col-2"><a href="<?php echo base_url(); ?>index.php/welcome/signup">Sign-In</a></li>
       <?php
     }
     else {
       ?>
-      <li><a href='<?php echo base_url(); ?>index.php/welcome/coup'><span>Post Coupons</span></a></li>
+      <li><a href='<?php echo base_url(); ?>index.php/welcome/coupons'><span>Post Coupons</span></a></li>
       <li class="col-2 profile"><a href="edit-profile.html">Profile <span><i class="fa fa-caret-right"></i></span></a></li>
       <?php
     }
@@ -73,9 +73,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="blur" id="blur"></div>
   <div class="side-menu" id="side-menu">
     <ul>
-      <a href='<?php echo base_url(); ?>index.php/welcome/editacc'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
+      <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
       <li><a href='redeemed-coupons.html'><span>Redeemed Coupons</span></a></li>
-      <li><a href='<?php echo base_url(); ?>index.php/welcome/editacc'><span>Edit Account</span></a></li>
+      <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
       <li><a href='#'><span>Log Out</span></a></li>
       <div class="close-btn" id="close-btn">
         <span></span>

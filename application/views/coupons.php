@@ -5,12 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <title>Hourly Discounts</title>
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
 
 
-  <link href="css/coupons-page.css" rel='stylesheet' type='text/css' />
-  <link href="css/common.css" rel='stylesheet' type='text/css' />
-  <link  rel="icon" href="images/hd-logo.png" type="image/png" />
+  <link href="<?php echo base_url(); ?>css/coupons-page.css" rel='stylesheet' type='text/css' />
+  <link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
+  <link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -19,34 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
   <header>
-    <nav>
-      <div class="mobile-nav-bar hidden">
-        <div class="mobile-header-container"><span class="brand-header">Hourly Discounts</span></div>
-
-        <div class="hamburger-button" id="nav-icon4">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="sub-menu" id="mobile-navbar-submenu">
-          <ul>
-            <li><a href='index.html'><span>Home</span></a></li>
-            <li><a href='about.html'><span>About</span></a></li>
-            <li><a href='postcoupon.html'><span>Post Coupons</span></a></li>
-            <li><a href='index.html#search'><span>Search</span></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <ul class="primary-navbar secondary-navbar" >
-        <li class=" col-2"><a href="index.html">Home</a></li>
-        <li class="col-2"><a href="about.html">About Us</a></li>
-        <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
-          <li class=" col-2"><a href="postcoupon.html">Post Coupons</a></li>
-					<li class="col-2"><a href="index.html#search">Search</a></li>
-        </ul>
-      </nav>
-
+    <?php echo $navbar; ?>
     </header>
     <div class="container">
       <section class="quote-banner">
@@ -81,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <ul>
       <li>
         <div class="top-container">
-          <img alt="bg" src="images/coupon-thumbnail.jpg">
+          <img alt="bg" src="<?php echo base_url(); ?>images/coupon-thumbnail.jpg">
           <div class="desc-container"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p></div>
         </div>
         <div class="bottom-container">
@@ -157,6 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/common.js"></script>
     <script>
 
     $(document).ready(function(){

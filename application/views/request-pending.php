@@ -18,33 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
   <header>
-    <nav>
-      <div class="mobile-nav-bar hidden">
-        <div class="mobile-header-container"><span class="brand-header">Hourly Discounts</span></div>
-
-        <div class="hamburger-button" id="nav-icon4">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="sub-menu" id="mobile-navbar-submenu">
-          <ul>
-            <li><a href='index.html'><span>Home</span></a></li>
-            <li><a href='about.html'><span>About</span></a></li>
-            <li><a href='postcoupon.html'><span>Post Coupons</span></a></li>
-            <li><a href='index.html#search'><span>Search</span></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <ul class="primary-navbar secondary-navbar" >
-        <li class=" col-2"><a href="index.html">Home</a></li>
-        <li class="col-2"><a href="about.html">About Us</a></li>
-        <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
-        <li class=" col-2"><a href="postcoupon.html">Post Coupons</a></li>
-        <li class="col-2"><a href="index.html#search">Search</a></li>
-      </ul>
-    </nav>
+    <?php echo $navbar; ?>
 
   </header>
   <div class="container adjust">
@@ -116,6 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>js/common.js"></script>
   <script>
 
   $(document).ready(function(){

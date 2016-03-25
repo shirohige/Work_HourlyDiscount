@@ -23,24 +23,31 @@ class Welcome extends CI_Controller {
 		$this->load->view('homepage',$data);
 	}
 	public function about(){
-		$this->load->view('about');
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('about',$data);
 	}
-	public function editcoup(){
-		$this->load->view('edit-coupon');
+	public function editcoupon(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('edit-coupon',$data);
 	}
-	public function editacc(){
-		$this->load->view('edit-account');
+	public function editaccount(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('edit-account',$data);
 	}
-	public function reqp(){
-		$this->load->view('request-pending');
+	public function reqpending(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('request-pending',$data);
 	}
-	public function addcoup(){
-		$this->load->view('add-coupon');
+	public function addcoupon(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('add-coupon',$data);
 	}
-	public function coup(){
-		$this->load->view('coupons');
+	public function coupons(){
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('coupons',$data);
 	}
 	public function signup(){
-		$this->load->view('sign-up');
+		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$this->load->view('sign-up',$data);
 	}
 }
