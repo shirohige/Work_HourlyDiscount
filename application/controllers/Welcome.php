@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 		$this->load->view('homepage',$data);
 	}
 	public function about(){
@@ -44,6 +45,7 @@ class Welcome extends CI_Controller {
 	}
 	public function coupons(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 		$this->load->view('coupons',$data);
 	}
 	public function signup(){
@@ -52,6 +54,7 @@ class Welcome extends CI_Controller {
 	}
 	public function redeemedcoupons(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
+		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 		$this->load->view('redeemedcoupons',$data);
 	}
 	public function register(){
