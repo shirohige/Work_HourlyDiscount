@@ -55,13 +55,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('redeemedcoupons',$data);
 	}
 	public function register(){
-
 		$this->load->model('register');
 		$this->register->signup();
+		index();
 	}
 	public function login(){
-
 		$this->load->model('register');
 		$this->register->login();
+		index();
 	}
 }
