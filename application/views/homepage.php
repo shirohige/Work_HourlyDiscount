@@ -6,33 +6,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<title>Hourly Discounts</title>
 	<link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
-
 	<link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
 	<link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-	<script>
-	function geolocation(){
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition,showError);
-		} else {
-			var x = "Geolocation is not supported by this browser.";
-		}
-	}
-	function showPosition(position){
-		lat = position.coords.latitude;
-		lon = position.coords.longitude;
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				//document.getElementById("demo").innerHTML = xhttp.responseText;
-			}
-		};
-		xhttp.open("POST", "ajax_info.txt", true);
-		xhttp.send();
-	}
-	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 </head>
@@ -184,10 +162,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h2>HOT DEALS ON THE GO !</h2>
 		</section>
 		<section class="coupons">
-			<ul>
+			<ul id="dynamic-coupons">
 				<?php
-				for($i=0;$i<20;$i++)
-				echo $coupon;
+				for($i=0;$i<20;$i++){
+					//echo $coupon;
+				}
 				?>
 			</ul>
 		</section>
@@ -254,10 +233,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</footer>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>js/common.js"></script>
 	<script>
-
+	var lat,lng;
+	function geolocation(){
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition,showError);
+		} else {
+			var x = "Geolocation is not supported by this browser.";
+		}
+	}
+	function showPosition(position){
+		lat = position.coords.latitude;
+		lng = position.coords.longitude;
+		genCoupon();
+	}
+	function showError(error){
+		lat = geoplugin_latitude();
+		lng = geoplugin_longitude();
+	}
+	function genCoupon(){
+		if (lat == null || lng == null) showError(0);
+		$("#dynamic-coupons").load("<?php echo base_url(); ?>index.php/welcome/couponFactory/"+lng+"/"+lat+"/"+geoplugin_countryCode()+"/"+geoplugin_regionCode());
+	}
+	</script>
+	<script>
 	$(document).ready(function(){
+		geolocation();
 		$('.primary-navbar').css('visibility', 'visible');
 		$('.secondary-navbar').css('opacity', '0');
 		$(document).scroll(function () {
@@ -272,6 +275,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$('.secondary-navbar').css('opacity', '0');
 			}
 		});
+		genCoupon();
 	});
 	</script>
 </body>

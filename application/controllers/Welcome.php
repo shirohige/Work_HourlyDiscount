@@ -58,13 +58,24 @@ class Welcome extends CI_Controller {
 		$this->load->view('redeemedcoupons',$data);
 	}
 	public function register(){
+		$email=$this->input->post('email');
+		$pass=md5($this->input->post('pass'));
 		$this->load->model('register');
-		$this->register->signup();
+		$this->register->signup($email,$pass);
 		index();
 	}
 	public function login(){
+		$email=$this->input->post('email');
+		$pass=md5($this->input->post('pass'));
 		$this->load->model('register');
-		$this->register->login();
+		$this->register->login($email,$pass);
 		index();
+	}
+	public function couponFactory($lng,$lat,$region,$code){
+		echo $lng."/".$lat."/".$region."/".$code;
+	}
+	public function test($country,$region){
+		$this->load->model('Timezone');
+		echo $this->Timezone->get_time_zone($country,$region);
 	}
 }
