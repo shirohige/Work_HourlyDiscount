@@ -15,8 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href='<?php echo base_url(); ?>'><span>Home</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/about'><span>About</span></a></li>
         <?php
-        $loggedin=1;
-        if(/*$this->session->*/$loggedin != 1){
+        //$loggedin=1;
+        if(!isset($this->session->loggedin)){
           ?>
           <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>
           <li id="sign-up"><a href='<?php echo base_url(); ?>signup'><span>Sign-In</span></a></li>
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <li class="col-2"><a href="<?php echo base_url(); ?>index.php/welcome/about">About</a></li>
     <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
     <?php
-    if(/*$this->session->*/$loggedin != 1){
+    if(!isset($this->session->loggedin)){
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>
       <li class=" col-2"><a href="<?php echo base_url(); ?>index.php/welcome/signup">Sign-In</a></li>
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <li class="col-2"><a href="<?php echo base_url(); ?>index.php/welcome/about">About</a></li>
     <li class="col-4 brand"><span class="brand-header">HourlyDiscounts</span><br><span class="brand-slogan">Hot Deals on the go!</span></li>
     <?php
-    if(/*$this->session->*/$loggedin != 1){
+    if(!isset($this->session->loggedin)){
       ?>
       <li><a href='<?php echo base_url(); ?>index.php/welcome/signup'><span>Post Coupons</span></a></li>
       <li class=" col-2"><a href="<?php echo base_url(); ?>index.php/welcome/signup">Sign-In</a></li>
