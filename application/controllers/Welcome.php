@@ -6,6 +6,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 	}
 	public function index(){
+		$this->session->loggedin=1;
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 		$this->load->view('homepage',$data);

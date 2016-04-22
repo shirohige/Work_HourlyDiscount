@@ -61,11 +61,13 @@ $(document).ready(function(){
   });
   $( ".profile" ).click(function() {
     $('.side-menu ul').css('right', '0px');
+    $('.side-menu ul').css('opacity', '1');
     $('#blur').css('visibility', 'visible');
   });
   $( "#close-btn" ).click(function() {
 
     $('.side-menu ul').css('right', '-450px');
+        $('.side-menu ul').css('opacity', '0');
     $('#blur').css('visibility', 'hidden');
   });
 

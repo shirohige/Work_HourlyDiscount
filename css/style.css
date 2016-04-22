@@ -282,6 +282,7 @@ Side-menu
 .side-menu ul{
   position: fixed;
   top: 0px;
+  opacity: 0;
   right: -450px;
   width: 25%;
   height: 100%;

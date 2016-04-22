@@ -71,16 +71,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?>
   </ul>
   <div class="blur" id="blur"></div>
-  <div class="side-menu" id="side-menu">
-    <ul>
-      <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
-      <li><a href='<?php echo base_url(); ?>index.php/welcome/redeemedcoupons'><span>Redeemed Coupons</span></a></li>
-      <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
-      <li><a href='#'><span>Log Out</span></a></li>
-      <div class="close-btn" id="close-btn">
-        <span></span>
-        <span></span>
-      </div>
-    </ul>
-  </div>
+  <?php
+  if (isset($this->session->loggedin)){
+    ?>
+    <div class="side-menu" id="side-menu">
+      <ul>
+        <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
+        <li><a href='<?php echo base_url(); ?>index.php/welcome/redeemedcoupons'><span>Redeemed Coupons</span></a></li>
+        <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
+        <li><a href='#'><span>Log Out</span></a></li>
+        <div class="close-btn" id="close-btn">
+          <span></span>
+          <span></span>
+        </div>
+      </ul>
+    </div>
+    <?php
+  }
+  ?>
 </nav>
