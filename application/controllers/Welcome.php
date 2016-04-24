@@ -6,7 +6,6 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 	}
 	public function index(){
-		$this->session->loggedin=1;
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 		$this->load->view('homepage',$data);
@@ -16,8 +15,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('about',$data);
 	}
 	public function editcoupon(){
-		$data['navbar']=$this->load->view('navbar','',TRUE);
-		$this->load->view('edit-coupon',$data);
+		if(isset($this->session->loggedin) && $this->session->type=='o'){
+			$data['navbar']=$this->load->view('navbar','',TRUE);
+			$this->load->view('edit-coupon',$data);
+		}
+		else if(isset($this->session->loggedin) && $this->session->type=='c') $this->editaccount();
+		else $this->signup();
 	}
 	public function editaccount(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
@@ -28,13 +31,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('request-pending',$data);
 	}
 	public function addcoupon(){
-		$data['navbar']=$this->load->view('navbar','',TRUE);
-		$this->load->view('add-coupon',$data);
+		if(isset($this->session->loggedin) && $this->session->type=='o'){
+			$data['navbar']=$this->load->view('navbar','',TRUE);
+			$this->load->view('add-coupon',$data);
+		}
+		else if(isset($this->session->loggedin) && $this->session->type=='c') $this->editaccount();
+		else $this->signup();
 	}
 	public function coupons(){
-		$data['navbar']=$this->load->view('navbar','',TRUE);
-		$data['coupon']=$this->load->view('coupon_structure','',TRUE);
-		$this->load->view('coupons',$data);
+		if(isset($this->session->loggedin) && $this->session->type=='o'){
+			$data['navbar']=$this->load->view('navbar','',TRUE);
+			$data['coupon']=$this->load->view('coupon_structure','',TRUE);
+			$this->load->view('coupons',$data);
+		}
+		else if(isset($this->session->loggedin) && $this->session->type=='c') $this->editaccount();
+		else $this->signup();
 	}
 	public function signup(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
@@ -50,16 +61,21 @@ class Welcome extends CI_Controller {
 		$pass=md5($this->input->post('pass'));
 		$this->load->model('register');
 		$this->register->signup($email,$pass);
-		index();
+		$this->index();
 	}
 	public function login(){
 		$email=$this->input->post('email');
 		$pass=md5($this->input->post('pass'));
 		$this->load->model('register');
 		$this->register->login($email,$pass);
-		index();
+		$this->index();
+	}
+	public function logout(){
+		$this->session->sess_destroy();
+		$this->index();
 	}
 	public function couponFactory($lng,$lat,$region,$code){
-		echo $lng."/".$lat."/".$region."/".$code;
+		//echo $lng."/".$lat."/".$region."/".$code;
+		//echo md5("asdf");
 	}
 }

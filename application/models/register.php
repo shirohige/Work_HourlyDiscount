@@ -19,7 +19,7 @@ class register extends CI_Model{
     $sql = "select * from user where uemail='$email' AND upass='$pass'";
     $res = $this->db->query($sql);
     if ($res->num_rows() == 1) {
-      initSession($email,$pass);
+      $this->initSession($res->row_array());
       //echo "welcome $email";
       /*$res=$res->row();
       $data=array('uemail' => $res->uemail,'uname'=>$res->uname,'utype'=>$res->utype,'loggedin' => 1,'umob' =>$res->umob);
@@ -29,7 +29,12 @@ class register extends CI_Model{
     }
     else return FALSE;
   }
-  private function initSession($email,$pass){
+  private function initSession($res){
     //Initialize session Variables
+    $this->session->loggedin=1;
+    $this->session->set_userdata($res);
+    if($res['type'] == 'o'){
+      //load Owner Details
+    }
   }
 }

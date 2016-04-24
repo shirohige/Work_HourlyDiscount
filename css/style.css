@@ -282,7 +282,6 @@ Side-menu
 .side-menu ul{
   position: fixed;
   top: 0px;
-  opacity: 0;
   right: -450px;
   width: 25%;
   height: 100%;
@@ -291,7 +290,7 @@ Side-menu
   box-shadow: 5px 0px 50px 2px #000;
   z-index:2000;
   -webkit-transition:0.5s;
-  visibility: visible;
+  visibility: hidden;
 }
 .side-menu li{
 
