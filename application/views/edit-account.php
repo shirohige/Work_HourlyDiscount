@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="field-wrap">
               <center><img alt="coupon-logo" class="coupon-logo" src="<?php echo base_url(); ?>images/coupon-logo.png"></center>
               <center><div class="btn-style-2" id="imgbtn" onclick="showpanel()">Change Pic</div></center>
-              <input type="file" required required placeholder="Logo" name="logo" id="logo" onchange="preview()" style="visibility:hidden;width:0px;height:0px"/>
+              <input type="file" required required placeholder="Logo" name="logo" id="logo" onchange="preview()" />
             </div>
             <div class="top-row">
               <div class="field-wrap">
@@ -63,8 +63,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>-->
           </div>
           <div class="field-wrap">
-            <input id="lng" name="lng" required type="text" style="visibility:hidden;">
-            <input id="lat" name="lat" required type="text" style="visibility:hidden;">
+            <input id="lng" name="lng" required type="text">
+            <input id="lat" name="lat" required type="text">
             <input type="text" required autocomplete="off" placeholder="Address" id="addr" name="addr"/>
           </div>
           <!--

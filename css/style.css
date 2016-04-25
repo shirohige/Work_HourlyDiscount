@@ -1093,3 +1093,11 @@ footer
   margin-right: 3px;
   margin-bottom: 5px;
 }
+/*----------------------------------------------------------------
+Temporary css
+----------------------------------------------------------------*/
+
+#lng,#lat,#logo{
+  visibility: hidden;
+width:0px;height:0px;margin:0px;padding:0px;
+}
