@@ -76,11 +76,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?>
     <div class="side-menu" id="side-menu">
       <ul>
-        <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="circle"><img src="<?php echo base_url(); ?>images/people.png"></div></a>
+        <div class="profile-pic"><img src="<?php echo base_url(); ?>images/people.png"></div>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/redeemedcoupons'><span>Redeemed Coupons</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/logout'><span>Log Out</span></a></li>
+        <a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><div class="edit-btn" id="edit-btn">
+          <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+        </div></a>
         <div class="close-btn" id="close-btn">
+
           <span></span>
           <span></span>
         </div>

@@ -69,7 +69,11 @@ $(document).ready(function(){
     $('.side-menu ul').css('right', '-450px');
     $('#blur').css('visibility', 'hidden');
   });
-
+  $( "#blur" ).click(function() {
+    $('.side-menu ul').css('visibility', 'hidden');
+    $('.side-menu ul').css('right', '-450px');
+    $('#blur').css('visibility', 'hidden');
+  });
   var obj = $('#right');
   setInterval(function(){slideshow()}, 6000);
   function slideshow() {
