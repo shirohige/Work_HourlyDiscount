@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="field-wrap">
               <center><img alt="coupon-logo" class="coupon-logo" src="<?php echo base_url(); ?>images/coupon-logo.png"></center>
               <center><div class="btn-style-2" id="imgbtn" onclick="showpanel()">Change Pic</div></center>
-              <input type="file" required required placeholder="Logo" name="logo" id="logo" onchange="preview()" />
+              <input type="file" accept="image/*" required required placeholder="Logo" name="logo" id="logo" onchange="preview(this)" />
             </div>
             <div class="top-row">
               <div class="field-wrap">
@@ -216,7 +216,7 @@ function initialize() {
       function showpanel(){
         document.getElementById("logo").click();
       }
-      function preview(){
+      function preview(object){
         //preview code
       }
       google.maps.event.addDomListener(window, 'load', initialize);

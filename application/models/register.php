@@ -10,7 +10,7 @@ class register extends CI_Model{
     //  $rpass=md5($this->input->post('password'));
     $sql = "INSERT INTO `user`( `uemail`, `upass`, `type`) VALUES ('$email','$pass','0')";
     $res = $this->db->query($sql);
-    login($email,$pass);
+    $this->login($email,$pass);
     //echo "signup";
   }
   public function login($email,$pass){
