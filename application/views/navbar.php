@@ -76,7 +76,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?>
     <div class="side-menu" id="side-menu">
       <ul>
-        <div class="profile-pic"><img src="<?php echo base_url(); ?>images/people.png"></div>
+        <div class="profile-pic"><img src="<?php
+        if(isset($this->session->loggedin) &&($this->session->type=='p' || $this->session->type == 'b')){
+          echo base_url()."/images/profile/".$this->session->cid.".jpg";
+        }
+        else echo base_url()."images/people.png"; ?>"></div>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/redeemedcoupons'><span>Redeemed Coupons</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/editaccount'><span>Edit Account</span></a></li>
         <li><a href='<?php echo base_url(); ?>index.php/welcome/logout'><span>Log Out</span></a></li>
@@ -85,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div></a>
         <div class="close-btn" id="close-btn">
 
-          <span></span>
+          <span><?php echo $this->session->cid; ?> Test</span>
           <span></span>
         </div>
       </ul>

@@ -250,12 +250,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		genCoupon();
 	}
 	function showError(error){
+
 		lat = geoplugin_latitude();
 		lng = geoplugin_longitude();
+		genCoupon();
 	}
 	function genCoupon(){
-		if (lat == null || lng == null) showError(0);
-		$("#dynamic-coupons").load("<?php echo base_url(); ?>index.php/welcome/couponFactory/"+lng+"/"+lat+"/"+geoplugin_countryCode()+"/"+geoplugin_regionCode());
+		if (lat == null || lng == null) {showError(0);}
+		else {
+			if(geoplugin_regionCode() == null)rcode="0";
+			else rcode=geoplugin_regionCode();
+			$("#dynamic-coupons").load("<?php echo base_url(); ?>index.php/welcome/couponFactory/"+lng+"/"+lat+"/"+geoplugin_countryCode()+"/"+rcode);
+		}
 	}
 	</script>
 	<script>
@@ -275,6 +281,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$('.secondary-navbar').css('opacity', '0');
 			}
 		});
+		//alert("showError");
 		genCoupon();
 	});
 	</script>

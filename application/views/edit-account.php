@@ -25,11 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="form">
         <div id="signup">
           <div class="quote-banner"><h2>COMPLETE ACCOUNT</h2></div>
-          <form action="<?php echo base_url(); ?>/index.php/welcome/requestpending" method="post">
+          <form action="<?php echo base_url(); ?>/index.php/welcome/reqpending" method="post" enctype="multipart/form-data">
             <div class="field-wrap">
-              <center><img alt="coupon-logo" class="coupon-logo" src="<?php echo base_url(); ?>images/people.png"></center>
+              <center><img alt="coupon-logo" id="prev" class="coupon-logo" src="<?php echo base_url(); ?>images/people.png"></center>
               <center><div class="btn-style-2" id="imgbtn" onclick="showpanel()">Change Pic</div></center>
-              <input type="file" accept="image/*" required required placeholder="Logo" name="logo" id="logo" onchange="preview(this)" />
+              <input type="file" accept="image/*" required name="profile" id="logo" onchange="preview(this)" />
             </div>
             <div class="top-row">
               <div class="field-wrap">
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <input type="text" required autocomplete="off" placeholder="Company Name" name="cname"/>
             </div>
             <div class="field-wrap">
-              <input type="email" required autocomplete="off" placeholder="Email Address" name="cename"/>
+              <input type="email" required autocomplete="off" placeholder="Email Address" name="cemail"/>
             </div>
 
             <div class="field-wrap">
@@ -217,9 +217,25 @@ function initialize() {
         document.getElementById("logo").click();
       }
       function preview(object){
-        //preview code
+        var file = object.files[0];
+        var imageType = /image.*/;
+        var img=document.getElementById("prev");
+        if(!file.type.match(imageType)){
+          object.value=null;
+          img.src=defaultSrc;
+          return;//error file not an Image
+        }
+        img.file = file;
+        var reader = new FileReader();
+        reader.onload = (function(aImg) {
+          return function(e) {
+            aImg.src = e.target.result;
+          };
+        })(img);
+        reader.readAsDataURL(file);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+      var defaultSrc = document.getElementById("prev").src;
       </script>
     </body>
     </html>

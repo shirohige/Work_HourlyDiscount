@@ -8,7 +8,7 @@ class register extends CI_Model{
     //$email=$this->input->post('email');
     //$pass=md5($this->input->post('pass'));
     //  $rpass=md5($this->input->post('password'));
-    $sql = "INSERT INTO `user`( `uemail`, `upass`, `type`) VALUES ('$email','$pass','0')";
+    $sql = "INSERT INTO `user`( `uemail`, `upass`, `type`) VALUES ('$email','$pass','c')";
     $res = $this->db->query($sql);
     $this->login($email,$pass);
     //echo "signup";
@@ -33,8 +33,39 @@ class register extends CI_Model{
     //Initialize session Variables
     $this->session->loggedin=1;
     $this->session->set_userdata($res);
-    if($res['type'] == 'o'){
+    if($res['type'] == 'b' || $res['type'] == 'p'){
+      $sql = "select * from stores where uid ='".$this->session->uid."'";
+      $res = $this->db->query($sql);
+      $this->session->set_userdata($res->row_array());
       //load Owner Details
     }
+  }
+  private function upload($name){
+    $config['upload_path']          = './images/profile/';
+    $config['allowed_types']        = 'gif|jpg|png';
+    $config['max_size']             = 1000;
+    $config['max_width']            = 0;
+    $config['max_height']           = 0;
+    $config['overwrite']            = TRUE;
+    $config['file_name']            = $name.".jpg";
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
+    if(!$this->upload->do_upload('profile')){
+      echo $this->upload->display_errors();
+    }else{
+      echo "file Uploaded";
+    }
+  }
+  public function completeAccount($fname,$lname,$cname,$cemail,$pno,$lat,$lng,$addr){
+    $uid=$this->session->uid;
+    $sql = "UPDATE `user` SET `type`='p' WHERE uid='$uid'";
+    $this->db->query($sql);
+    $sql = "INSERT INTO `stores`(`uid`, `o_fname`, `o_lname`, `cemail`, `lng`, `lat`, `cname`, `addr`) VALUES ('$uid','$fname','$lname','$cemail','$lng','$lat','$cname','$addr')";
+    $this->db->query($sql);
+    $id = $this->db->insert_id();
+    $this->upload($id);
+    $sql = "Select * from user where uid='$uid'";
+    $res = $this->db->query($sql);
+    $this->initSession($res->row_array());
   }
 }
