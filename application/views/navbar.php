@@ -88,8 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
         </div></a>
         <div class="close-btn" id="close-btn">
-
-          <span><?php echo $this->session->cid; ?> Test</span>
+          <span></span>
           <span></span>
         </div>
       </ul>

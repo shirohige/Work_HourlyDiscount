@@ -33,7 +33,6 @@ class Welcome extends CI_Controller {
 		else $this->login();
 	}
 	public function reqpending(){
-		$this->session->type='c';
 		if(isset($this->session->loggedin) && $this->session->type=='c'){
 			//$uid=$this->session->uid;
 			//$sql = "UPDATE `user` SET `type`='p' WHERE uid='$uid'";
