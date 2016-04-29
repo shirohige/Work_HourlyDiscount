@@ -15,9 +15,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('about',$data);
 	}
 	public function editcoupon(){
-		if(isset($this->session->loggedin) && $this->session->type=='o'){
+		if(isset($this->session->loggedin) && $this->session->type=='b'){
 			$data['navbar']=$this->load->view('navbar','',TRUE);
-			$this->load->view('edit-coupon',$data);
+			$this->load->view('edit-coupons',$data);
 		}
 		else if(isset($this->session->loggedin) && $this->session->type=='c') $this->editaccount();
 		else $this->signup();
@@ -55,15 +55,15 @@ class Welcome extends CI_Controller {
 		}
 	}
 	public function addcoupon(){
-		if(isset($this->session->loggedin) && $this->session->type=='o'){
+		if(isset($this->session->loggedin) && $this->session->type=='b'){
 			$data['navbar']=$this->load->view('navbar','',TRUE);
 			$this->load->view('add-coupon',$data);
 		}
-		else if(isset($this->session->loggedin) && $this->session->type=='c') $this->editaccount();
+		else if(isset($this->session->loggedin) && ($this->session->type=='c' || $this->session->type=='p')) $this->editaccount();
 		else $this->signup();
 	}
 	public function coupons(){
-		if(isset($this->session->loggedin) && $this->session->type=='o'){
+		if(isset($this->session->loggedin) && $this->session->type=='b'){
 			$data['navbar']=$this->load->view('navbar','',TRUE);
 			$data['coupon']=$this->load->view('coupon_structure','',TRUE);
 			$this->load->view('coupons',$data);
@@ -102,13 +102,8 @@ class Welcome extends CI_Controller {
 		$this->session->sess_destroy();
 		$this->index();
 	}
-	public function couponFactory($lng,$lat,$region,$code){
-		//echo "hello";
+	public function couponFactory($lng,$lat,$region,$code=null){
 		$this->load->model('Timezone');
-		echo $tz=$this->Timezone->get_time_zone($region,$code);
-		//$date = new DateTime(time(), new DateTimeZone('$tz'));
-		//echo date("h:m:s");
-		//echo $lng."/".$lat."/".$region."/".$code;
-		//echo md5("asdf");
+		$tz=$this->Timezone->get_time_zone($region,$code);
 	}
 }
