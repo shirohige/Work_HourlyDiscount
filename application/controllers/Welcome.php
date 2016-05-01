@@ -5,6 +5,32 @@ class Welcome extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 	}
+	public function createcoupon(){
+		$this->load->model('register');
+		$this->load->model('Timezone');
+		$tz=$this->Timezone->get_time_zone($this->input->post('country'),$this->input->post('zone'));
+		//$from=$this->input->post('time_from');
+		//$to=$this->input->post('time_to');
+		$date_from = new DateTime($this->input->post('time_from').':00:00', new DateTimeZone($tz));
+		$date_from->setTimezone(new DateTimeZone('UTC'));
+		$date_to = new DateTime($this->input->post('time_to').':00:00', new DateTimeZone($tz));
+		$date_to->setTimezone(new DateTimeZone('UTC'));
+		/*$th_from=$date_from->format('H');
+		$tm_from=$date_from->format('m');
+		$th_to=$date_to->format('H');
+		$tm_to=$date_to->format('m');*/
+		$this->register->createcoupon(
+		$this->input->post('discount'),
+		$this->input->post('coupon_description'),
+		$this->input->post('cat'),
+		$this->input->post('sub-cat'),
+		$date_from->format('H'),
+		$date_from->format('i'),
+		$date_to->format('H'),
+		$date_to->format('i'),
+		$this->input->post('days')
+	);
+	}
 	public function index(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
 		$data['coupon']=$this->load->view('coupon_structure','',TRUE);

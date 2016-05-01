@@ -1,0 +1,12 @@
+SELECT *,CASE
+	  WHEN (`th_from` > `th_to`) THEN CASE
+    	  WHEN (`th_from` < 6) AND (6 < (`th_to`)+24) THEN '1'
+        WHEN (`th_from` < 6) AND (6 = (`th_to`)+24) AND (01 < `tm_to`) THEN '1'
+        WHEN (`th_from` > 6) AND ((6+24) < `th_to`) THEN '1'
+        ELSE '0' END
+    WHEN (`th_from` < `th_to`) THEN CASE
+    	  WHEN (`th_from`> 6) OR (`th_from` =6 AND `tm_from`>40) THEN '0'
+        WHEN (`th_to` < 7) OR (`th_to` = 7 AND `tm_to` < 02) THEN '0'
+        ELSE '1' END
+    ELSE '0' END AS STATUSCode
+FROM `coupon` WHERE 1

@@ -2,8 +2,18 @@ $(document).ready(function(){
   $('.primary-navbar').css('visibility', 'hidden');
   $('.secondary-navbar').css('visibility', 'visible');
   $('.secondary-navbar').css('opacity', '1');
+  $('.category').click(function(){
+    $('#category-input').val($(this).attr("value"));
+  });
+  $('.sub-category').click(function(){
+    $('#sub-category-input').val($(this).attr("value"));
+  });
+  $('.weekday').click(function(){
+    $('#weekday-input').val($('#weekday-input').val()+","+$(this).attr("value"));
+    var obj = $('#weekday-input');
+    if(obj.val().charAt(0) == ',')obj.val(obj.val().substring(1,obj.val().length));
+  });
   var flag=0;
-
   $( ".hamburger-button" ).click(function() {
     $(this).toggleClass('open');
     if(flag==0){
@@ -14,13 +24,10 @@ $(document).ready(function(){
       $('#mobile-navbar-submenu').css('height', '0px');
       flag=0;
     }
-
   });
   $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
     var $this = $(this),
     label = $this.prev('label');
-
     if (e.type === 'keyup') {
       if ($this.val() === '') {
         label.removeClass('active highlight');
@@ -34,7 +41,6 @@ $(document).ready(function(){
         label.removeClass('highlight');
       }
     } else if (e.type === 'focus') {
-
       if( $this.val() === '' ) {
         label.removeClass('highlight');
       }
@@ -42,22 +48,14 @@ $(document).ready(function(){
         label.addClass('highlight');
       }
     }
-
   });
-
   $('.tab a').on('click', function (e) {
-
     e.preventDefault();
-
     $(this).parent().addClass('active');
     $(this).parent().siblings().removeClass('active');
-
     target = $(this).attr('href');
-
     $('.tab-content > div').not(target).hide();
-
     $(target).fadeIn(600);
-
   });
   $( ".profile" ).click(function() {
     $('.side-menu ul').css('visibility', 'visible');
@@ -115,8 +113,6 @@ $(document).ready(function(){
     if(curr==0)
     $('#left').css('visibility', 'hidden');
   });
-
-
   ( function() {
     $('#btn-search').on('click', function(e) {
       e.preventDefault();
@@ -125,7 +121,6 @@ $(document).ready(function(){
   } () );
 });
 var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-
 function initialize()
 {
   var mapProp = {
@@ -133,14 +128,10 @@ function initialize()
     zoom:5,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
-
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
   var marker=new google.maps.Marker({
     position:myCenter,
   });
-
   marker.setMap(map);
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);

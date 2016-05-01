@@ -584,7 +584,6 @@ input {
 }
 .search-btn-container:hover #search-btn-container-submenu{
   visibility: visible;
-
 }
 /*----------------------------------------------------------------
 easy-nav-bar
@@ -1154,7 +1153,7 @@ footer
 Temporary css
 ----------------------------------------------------------------*/
 
-#lng,#lat,#logo{
+#lng,#lat,#logo,#country,#zone{
   visibility: hidden;
   width:0px;height:0px;margin:0px;padding:0px;
 }
