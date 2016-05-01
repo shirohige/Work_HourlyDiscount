@@ -1,4 +1,4 @@
-SELECT *,CASE
+Select * from (SELECT coupon.*,sqrt(POWER(stores.lng-(1.00245),2) + POWER(stores.lat-(1.00245),2)) AS Distance,stores.lat,stores.lng,CASE
 	  WHEN (`th_from` > `th_to`) THEN CASE
     	  WHEN (`th_from` < 6) AND (6 < (`th_to`)+24) THEN '1'
         WHEN (`th_from` < 6) AND (6 = (`th_to`)+24) AND (01 < `tm_to`) THEN '1'
@@ -9,4 +9,4 @@ SELECT *,CASE
         WHEN (`th_to` < 7) OR (`th_to` = 7 AND `tm_to` < 02) THEN '0'
         ELSE '1' END
     ELSE '0' END AS STATUSCode
-FROM `coupon` WHERE 1
+FROM `coupon` INNER JOIN stores ON coupon.cid=stores.cid) AS Detail WHERE STATUScode=1 ORDER BY Distance ASC

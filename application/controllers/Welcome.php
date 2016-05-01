@@ -128,8 +128,16 @@ class Welcome extends CI_Controller {
 		$this->session->sess_destroy();
 		$this->index();
 	}
-	public function couponFactory($lng,$lat,$region,$code=null){
+	public function couponFactory($lng,$lat,$region,$code=NULL){
 		$this->load->model('Timezone');
+		$this->load->model('register');
 		$tz=$this->Timezone->get_time_zone($region,$code);
+		$date = new DateTime('',new DateTimeZone($tz));
+		$date->setTime($date->format('H'),0,0);
+		$time = $date->format('H')."-".($date->format('H')+1);
+		$date->setTimezone(new DateTimeZone('UTC'));
+		//$thfrom = $date->format('H');
+		//$tmto = $tmfrom = $date->format('i');
+		$this->register->genCoupon($lat,$lng,$date->format('H'),$date->format('i'),$date->format('H')+1,$date->format('i'),$time);
 	}
 }

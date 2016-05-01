@@ -75,4 +75,24 @@ class register extends CI_Model{
     $res = $this->db->query($sql);
     $this->initSession($res->row_array());
   }
+  public function genCoupon($lat,$lng,$thfrom,$tmfrom,$thto,$tmto,$time){
+    $sql = "Select * from (SELECT coupon.*,stores.addr,sqrt(POWER(stores.lng-($lng),2) + POWER(stores.lat-($lat),2)) AS Distance,stores.lat,stores.lng,CASE
+            WHEN (`th_from` > `th_to`) THEN CASE
+            WHEN (`th_from` < $thfrom) AND ($thfrom < (`th_to`)+24) THEN '1'
+            WHEN (`th_from` < $thfrom) AND ($thfrom = (`th_to`)+24) AND (01 < `tm_to`) THEN '1'
+            WHEN (`th_from` > $thfrom) AND (($thfrom+24) < `th_to`) THEN '1'
+            ELSE '0' END
+            WHEN (`th_from` < `th_to`) THEN CASE
+            WHEN (`th_from`> $thfrom) OR (`th_from` =$thfrom AND `tm_from`>$tmfrom) THEN '0'
+            WHEN (`th_to` < $thto) OR (`th_to` = $thto AND `tm_to` < $tmto) THEN '0'
+            ELSE '1' END
+            ELSE '0' END AS STATUSCode
+            FROM `coupon` INNER JOIN stores ON coupon.cid=stores.cid) AS Detail where STATUSCode=1 ORDER BY Distance ASC";
+    //echo $sql;
+    $res = $this->db->query($sql);
+    if($res->num_rows() == 0) echo "Sorry No coupons Available at the moment,Please come again later";
+    foreach($res->result_array() as $data) {
+      $this->load->view('coupon_structure',array_merge($data,array('time' =>$time)));
+    }
+  }
 }
