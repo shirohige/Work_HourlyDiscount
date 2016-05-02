@@ -1,0 +1,11 @@
+Tests
+1:login
+2:Sign up
+3:completeAccount
+4:Add coupon
+5:Home Page
+
+*Format for Testing*
+<TESTER NAME>
+<TEST>:<RESULT>
+END <DATE>

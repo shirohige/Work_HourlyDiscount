@@ -43,7 +43,7 @@ class register extends CI_Model{
   private function upload($name,$path,$src){
     $config['upload_path']          = './images/'.$path.'/';
     $config['allowed_types']        = 'gif|jpg|png';
-    $config['max_size']             = 1000;
+    $config['max_size']             = 20000;
     $config['max_width']            = 0;
     $config['max_height']           = 0;
     $config['overwrite']            = TRUE;
