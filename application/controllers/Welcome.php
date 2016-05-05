@@ -28,8 +28,8 @@ class Welcome extends CI_Controller {
 		$date_from->format('i'),
 		$date_to->format('H'),
 		$date_to->format('i'),
-		$this->input->post('days')
-	);
+		$this->input->post('days'));
+		$this->index();
 	}
 	public function index(){
 		$data['navbar']=$this->load->view('navbar','',TRUE);
@@ -138,6 +138,6 @@ class Welcome extends CI_Controller {
 		$date->setTimezone(new DateTimeZone('UTC'));
 		//$thfrom = $date->format('H');
 		//$tmto = $tmfrom = $date->format('i');
-		$this->register->genCoupon($lat,$lng,$date->format('H'),$date->format('i'),$date->format('H')+1,$date->format('i'),$time);
+		$this->register->genCoupon($lat,$lng,$date->format('H'),$date->format('i'),$date->format('H')+1,$date->format('i'),$time,$date->format('l'));
 	}
 }

@@ -75,7 +75,7 @@ class register extends CI_Model{
     $res = $this->db->query($sql);
     $this->initSession($res->row_array());
   }
-  public function genCoupon($lat,$lng,$thfrom,$tmfrom,$thto,$tmto,$time){
+  public function genCoupon($lat,$lng,$thfrom,$tmfrom,$thto,$tmto,$time,$weekday){
     $sql = "Select * from (SELECT coupon.*,stores.addr,sqrt(POWER(stores.lng-($lng),2) + POWER(stores.lat-($lat),2)) AS Distance,stores.lat,stores.lng,CASE
             WHEN (`th_from` > `th_to`) THEN CASE
             WHEN (`th_from` < $thfrom) AND ($thfrom < (`th_to`)+24) THEN '1'
@@ -87,7 +87,7 @@ class register extends CI_Model{
             WHEN (`th_to` < $thto) OR (`th_to` = $thto AND `tm_to` < $tmto) THEN '0'
             ELSE '1' END
             ELSE '0' END AS STATUSCode
-            FROM `coupon` INNER JOIN stores ON coupon.cid=stores.cid) AS Detail where STATUSCode=1 ORDER BY Distance ASC";
+            FROM `coupon` INNER JOIN stores ON coupon.cid=stores.cid) AS Detail where STATUSCode=1 AND `weekdays` LIKE '%".$weekday."%' ORDER BY Distance ASC";
     //echo $sql;
     $res = $this->db->query($sql);
     if($res->num_rows() == 0) echo "Sorry No coupons Available at the moment,Please come again later";
