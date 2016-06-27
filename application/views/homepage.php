@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Hourly Discounts</title>
+	<title>Hourly </title>
 	<link href="<?php echo base_url(); ?>css/style.css" rel='stylesheet' type='text/css' />
 	<link href="<?php echo base_url(); ?>css/common.css" rel='stylesheet' type='text/css' />
 	<link  rel="icon" href="<?php echo base_url(); ?>images/hd-logo.png" type="image/png" />
